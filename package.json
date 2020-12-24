@@ -1,8 +1,8 @@
 {
-  "name": "edit-release-2",
+  "name": "update-release",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A GitHub Action to edit GitHub Releases",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,9 +15,5 @@
     "node"
   ],
   "author": "Subhaditya Nath",
-  "license": "MIT",
-  "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0"
-  }
+  "license": "MIT"
 }
