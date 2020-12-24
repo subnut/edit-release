@@ -49,7 +49,7 @@ jobs:
         uses: actions/checkout@v2
       - name: edit Release
         id: edit_release
-        uses: subnut/edit-release@v2.0.0
+        uses: subnut/edit-release@v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
