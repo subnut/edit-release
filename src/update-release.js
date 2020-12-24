@@ -4,8 +4,8 @@ const fs = require('fs');
 
 async function run() {
   try {
-    // Get authenticated GitHub client (Ocktokit): https://github.com/actions/toolkit/tree/master/packages/github#usage
-    const github = new GitHub(process.env.GITHUB_TOKEN);
+    // Get authenticated GitHub client (Octokit): https://github.com/actions/toolkit/tree/master/packages/github#usage
+    const octokit = new GitHub(process.env.GITHUB_TOKEN); // eslint-disable-line no-undef
 
     // Get owner and repo from context of payload that triggered the action
     const { owner: currentOwner, repo: currentRepo } = context.repo;
@@ -44,7 +44,7 @@ async function run() {
     // Edit the release
     // API Documentation: https://developer.github.com/v3/repos/releases/#create-a-release
     // Octokit Documentation: https://octokit.github.io/rest.js/#octokit-routes-repos-create-release
-    const updateReleaseResponse = await github.repos.updateRelease({
+    const updateReleaseResponse = await octokit.repos.updateRelease({
       owner,
       repo,
       release_id: releaseID,
@@ -70,4 +70,3 @@ async function run() {
 }
 
 module.exports = run;
-
