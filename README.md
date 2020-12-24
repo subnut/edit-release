@@ -78,3 +78,5 @@ We would love you to contribute to `@subnut/create-release`, pull requests are w
 ## License
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
 
+## Credits
+This repo is heavily inspired by [actions/create-release](https://github.com/actions/create-release). Thanks to the guys who made that!
