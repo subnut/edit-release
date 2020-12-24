@@ -5769,29 +5769,18 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 713:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-const run = __webpack_require__(962);
-
-if (require.main === require.cache[eval('__filename')]) {
-  run();
-}
-
-
-/***/ }),
-
-/***/ 962:
+/***/ 6:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 const core = __webpack_require__(186);
-const { GitHub, context } = __webpack_require__(438);
+const github = __webpack_require__(438);
+const context = github.context
 const fs = __webpack_require__(747);
 
 async function run() {
   try {
     // Get authenticated GitHub client (Octokit): https://github.com/actions/toolkit/tree/master/packages/github#usage
-    const octokit = new GitHub(process.env.GITHUB_TOKEN); // eslint-disable-line no-undef
+    const octokit = github.getOctokit(process.env.GITHUB_TOKEN); // eslint-disable-line no-undef
 
     // Get owner and repo from context of payload that triggered the action
     const { owner: currentOwner, repo: currentRepo } = context.repo;
@@ -5856,6 +5845,18 @@ async function run() {
 }
 
 module.exports = run;
+
+
+/***/ }),
+
+/***/ 713:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+const run = __webpack_require__(6);
+
+if (require.main === require.cache[eval('__filename')]) {
+  run();
+}
 
 
 /***/ }),

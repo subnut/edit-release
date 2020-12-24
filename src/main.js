@@ -1,4 +1,4 @@
-const run = require('./update-release.js');
+const run = require('./edit-release.js');
 
 if (require.main === module) {
   run();

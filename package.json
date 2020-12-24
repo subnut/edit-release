@@ -1,6 +1,6 @@
 {
-  "name": "update-release",
-  "version": "1.0.0",
+  "name": "edit-release",
+  "version": "2.0.0",
   "description": "A GitHub Action to edit GitHub Releases",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/subnut/update-release"
+    "url": "git+https://github.com/subnut/edit-release"
   },
   "keywords": [
     "actions",

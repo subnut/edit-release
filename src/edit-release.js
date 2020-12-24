@@ -1,11 +1,12 @@
 const core = require('@actions/core');
-const { GitHub, context } = require('@actions/github');
+const github = require('@actions/github');
+const context = github.context
 const fs = require('fs');
 
 async function run() {
   try {
     // Get authenticated GitHub client (Octokit): https://github.com/actions/toolkit/tree/master/packages/github#usage
-    const octokit = new GitHub(process.env.GITHUB_TOKEN); // eslint-disable-line no-undef
+    const octokit = github.getOctokit(process.env.GITHUB_TOKEN); // eslint-disable-line no-undef
 
     // Get owner and repo from context of payload that triggered the action
     const { owner: currentOwner, repo: currentRepo } = context.repo;
